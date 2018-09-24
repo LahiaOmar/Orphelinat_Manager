@@ -1,0 +1,91 @@
+<div class="jugement">
+    <div class="topPage">
+        <div>
+            <p>ROYAUME DU MAROC <br>
+                MINISTERE DE LA SANTE <br>
+                DELEGATION DE LA PREFECTURE DE FES<br>
+                SERVICE SOCIAL PREFECTORAL <br>
+                *********** <br>
+                N° …..../……SS <br>
+            </p>
+        </div>
+
+        <div>
+            <p>
+                Fès le : <%= day%> / <%= month %> / <%= year%>
+            </p>
+        </div>
+    </div>
+    <div class="titlePage">
+        <div>
+            <strong>
+                    L’Assistante Sociale <br>
+            </strong>
+        </div>
+            <strong>A</strong>
+        <div>
+        </div>
+            <strong>Monsieur le PROCUREUR du ROI<br></strong>
+        <div>
+            <strong>Tribunal de Première Instance de Fès <br></strong>
+        </div>
+        <div>
+            <strong>S/C. De la Voie Hiérarchique<br></strong>
+        </div>
+
+    </div>
+    <br>
+    <div class="object">
+        <p> <strong><span style="margin-left: -100px">OBJET</span> : J</strong>ugement d’abandon et inscription à l’état civil d’un enfant abandonné.</p>
+        <br>
+    </div>
+    <div class="demande">
+        <p>
+            <strong>C</strong>onformément au Dahir portant loi N° 1.02.172 du 1er rabia II 1423/13 JUIN 2002 portant promulgation de la loi 15-01 relative à la prise en charge des enfants abandonnés. <br>
+            J’ai l’honneur de vous informer qu’un enfant de sexe  <%if(kid[0].gender === 'ذكر'){%> <strong> MASCULIN </strong> <%}else{%> <strong> FEMININ </strong> <%}%> a été admis au centre Al Amal des enfants abandonnés situé à l’hôpital Al ghassani de la ville de Fès le
+            <% var date = kid[0].dateOfRegistration.toISOString().slice(0, 10).split("-")%>
+            <strong> <%=date[2]%>/<%=date[1]%>/<%=date[0]%> </strong>
+            et enregistré sous le numéro <strong> <%= kid[0].RegistrationNumber%> </strong>.<br><br>
+
+            <strong>I</strong>l s’agit d’un enfant de sexe <%if(kid[0].gender === 'ذكر'){%> <strong> MASCULIN </strong> <%}else{%> <strong> FEMININ </strong> <%}%> abandonné par sa mère,  <%if(kid[0].motherName === 'بدون' || kid[0].motherName === 'لا شيء'){%> <%}else{%> <%= "nommée " + kid[0].motherName %> <%}%>
+            <br><br><br><br>
+            <%if(kid[0].recordDate){%>
+                <% var date = kid[0].recordDate.toISOString().slice(0, 10).split("-")%>
+            <%}else{%>
+            <%var date=["-","-","-"]}%>
+            Réquisition N° : <strong> <%= kid[0].recordNumber%> </strong> du <%=date[2]%>/<%=date[1]%>/<%=date[0]%>  de l’arrondissement <strong><%= kid[0].recordSource%></strong>
+        </p>
+    </div>
+    <div class="infoEnfant">
+        <div>
+            <p>
+               <strong>Enfant nommé :</strong>
+            </p>
+        </div>
+        <div>
+            <strong>Prénom</strong> : <%= kid[0].name %> <br>
+            <strong>Nom présumé du père</strong> : <%if(kid[0].fatherName === 'بدون' || kid[0].fatherName === 'لا شيء'){%> - <%}else{%> <%= kid[0].fatherName %> <%}%><br>
+            <strong>Nom présumé de la mère</strong> : <%if(kid[0].motherName === 'بدون' || kid[0].motherName === 'لا شيء'){%> - <%}else{%> <%= kid[0].motherName %> <%}%><br>
+        </div>
+    </div>
+    <div class="finPagee">
+        <p>
+            Afin de régulariser la situation de cet enfant, nous vous prions de bien vouloir procéder à son inscription au Registre d’Etat Civil, nous adresser un extrait de son acte de naissance et nous informer du Jugement d’abandon de l’enfant. <br><br>
+            <u>Ci-joint</u> : <br>
+            - Une copie de la réquisition de police.<br>
+            - Certificat médical de l’enfant.<br><br>
+        </p>
+    </div>
+    <div class="sig">
+        <div>
+            <p>
+                Signature  :
+            </p>
+        </div>
+        <div>
+            <p>
+                Signature du chef hiérarchique
+            </p>
+        </div>
+    </div>
+</div>

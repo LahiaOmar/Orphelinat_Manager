@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amal association</title>
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/input.css">
+  <link rel="stylesheet" media="print" href="stylesheets/print.css" type="text/css" />
+  <!--<link href="https://fonts.googleapis.com/css?family=Cairo:600" rel="stylesheet">-->
+  <script>
+
+  </script>
+</head>
+<body>
+<div id="container">
+  <div id="dashboard">
+    <!--done-->
+    <div id="user-info">
+      <!--done-->
+      <div id="logoTop">
+        <a href="/"><div id="title">
+          <div><img id="logo" src="images/logo_nouveau.jpeg" alt="logo image"></div>
+          <div id="description">مركز الأمل </div>
+          </div></a>
+      </div>
+
+      <!--done-->
+      <div id="profile">
+        <div id="profile-pic">
+          <img id="avatar" src="images/admin.png" alt="home" class="logo">
+        </div>
+        <div id="userMessage">
+          <span>مرحبا بك</span>
+          <h2><%= user.login %></h2>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div id="side-bar">
+      <h3>General</h3>
+      <div id="accordion">
+          <% for(var i = 0 ;i< user.access.length; i++) { %>
+          <%- include('partials/'+user.access[i],{i}); %>
+          <% } %>
+      </div>
+    </div>
+  </div>
+  <div id="rightSide">
+    <div id="top">
+
+      <div id="nav-bar" class="topClass" onclick="slide()">
+        <img src="images/admin.png" alt="logo" id="nav_img">
+        <span><%= user.login %></span>
+        <img src="images/arrow-point-to-right.png" id="nav_arrow">
+      </div>
+      <div id="leftCont">
+        <div id="menu" onclick="menuslid()">
+          <img src="images/menu.png" alt="">
+        </div>
+        <div id="rightItems">
+
+          <div id="info_user">
+            <div id="info_user_out">الخروج</div>
+            <img src="images/fond-top.png" alt="">
+            <div id="info_user_profile">معلومات شخصية</div>
+            <img src="images/fond-top.png" alt="">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div id="printContainer">
+      <div class="printTitre"> <p>جمعية العمل الاجتماعي والثقافي – فرع فاس الولاية </p> </div>
+      <div class="printHeader">
+        <div class="left">
+          <p> –العنوان : مستشفى الغساني – فاس<br>
+            رقم الانخراط في : ص.و.ض.ج:9005316<br>
+            <span>157N302770</span> : رقم الحساب البنكي <br>
+            رقــــــم الــــهـاتـف : 87 35 94 35 05<br>
+          </p>
+        </div>
+        <div class="centre">
+          <img src="../images/logo_nouveau.jpeg">
+        </div>
+        <div class="rigth">
+          <p>
+            مؤسسة الرعاية الاجتماعية <br>
+            المركز الاجتماعي للأطفال المهملين<br>
+            رخصة رقم : 09/163<br>
+            بتاريخ : 11 دجنبر 2014<br>
+
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div id="panel">
+        <div class="title">
+          <h1>الرسم المبياني لنفقات والمداخيل لسنة الحالية</h1>
+        </div>
+        <div class="selectYear">
+          <div class="selectViv">
+            <input type="button" class="print" value="" onclick="printe('id')">
+          </div>
+        </div>
+        <div id="chartFinance">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="stylesheets\morris.css">
+<script src="javascripts\jquery.js"></script>
+<script src="javascripts\raphael.js"></script>
+<script src="javascripts\morris.min.js"></script>
+<script src="javascripts/script.js"></script>
+<script src="javascripts\push.min.js"></script>
+
+<%if(data.length !== 0) {%>
+<script>
+    Morris.Bar({
+        element: 'chartFinance',
+        data: [
+            <%for(var i = 0; i<12; i++ ) {%>
+            <%if(data[0].months[i] !== null && data[0].months[i] !== undefined) {%>
+            {x: '<%= month[i]%>', y: '<%= data[0].months[i].income%>',  a: '<%= data[0].months[i].outcome%>'},
+            <% } else { %>
+            {x: '<%= month[i]%>', y: 0,  a: 0},
+            <% } %>
+            <% } %>
+        ],
+        xkey: 'x',
+        ykeys: ['y','a'],
+        labels: [' المداخيل ', 'النفقات']
+    }).on('click', function(i, row){
+        console.log(i, row);
+    });
+</script>
+<% } %>
+</body>
+</html>

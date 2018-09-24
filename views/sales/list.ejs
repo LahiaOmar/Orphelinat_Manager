@@ -1,0 +1,53 @@
+
+<div id="panel">
+    <div class="title">
+        <h1> قائمة القاعات و التجهيزات</h1>
+    </div>
+    <div class="selectViv">
+        <form action="/docx" method="post" class="formSend">
+            <select name="salleName" id="select">
+                <%for(var i =0; i < ids.length; i++){%>
+                <option <% if(ids[i]==selected){ %>
+                        selected
+                        <%}%>
+                >
+                    <%= ids[i] %></option>
+                <% } %>
+            </select>
+            <input type="hidden" name="mod" value="equipment" class="text">
+            <a id="search" class="search" >بحث</a>
+            <button type="submit" class="print"></button>
+        </form>
+        
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+
+            <th >ملاحضة</th>
+            <th >الجهة المانحة</th>
+            <th >الكمية</th>
+            <th style="min-width: 300px; " >اسم جهاز</th>
+            <th >رقم جهاز</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <% for (var i = 0; i < chambers.length; i++) { %>
+        <tr>
+            <td> <%=chambers[i].note%> </td>
+            <td> <%=chambers[i].donor%> </td>
+            <td><%= chambers[i].quantity%></td>
+            <td><%=chambers[i].name%></td>
+            <td> <%= i+1%> </td>
+        </tr>
+        <% }%>
+
+
+
+        </tbody>
+    </table>
+
+</div>

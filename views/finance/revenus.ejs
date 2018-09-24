@@ -1,0 +1,95 @@
+<div id="panel">
+    <div class="title">
+        <h1> جرد المداخيل </h1>
+    </div>
+    <div class="selectYear">
+        <div class="selectViv">
+            <form action="/docx" method="post" class="formSend">
+                <select name="year" id="select">
+                    <%for(var i =0; i < years.length; i++){%>
+                    <option <% if(years[i]==selected){ %>
+                            selected
+                            <%}%>
+
+                    >
+                        <%= years[i] %></option>
+                    <% } %>
+                </select>
+                <input type="hidden" name="mod" value="income" class="text">
+                <input type="hidden" name="fich" value="finance" class="text">
+                <input type="hidden" name="genre" value="editIncome" class="text">
+                <select name="months" id="select">
+                    <option >NaN</option>
+                    <%for(var i =1; i <=month.length; i++){%>
+                    <option <% if(i==selectedMonth){ %>
+                            selected
+                            <%}%>
+                            value="<%=i%>"
+                    >
+                        <%= month[i-1] %></option>
+                    <% } %>
+                </select>
+                <a  id="search" class="search" >بحث</a>
+                <button type="submit" class="print"></button>
+            </form>
+        </div>
+    </div>
+    <% if(found != false) {%>
+    <div class="table1">
+        <table>
+            <thead>
+            <tr>
+                <th class="hiden">العمليات</th>
+                <th>ملاحظات </th>
+                <th>مبلغ التحويل بالدرهم </th>
+                <th>تاريخ التحويل </th>
+                <th>رقم وثيقة التحويل </th>
+                <th>الرمز المحاسبي </th>
+                <th >مصدر المداخي</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% var sumValue=0%>
+            <%for(var i=0; i< incomes.length; i++) { %>
+                <%sumValue += incomes[i].value%>
+            <tr>
+                <td style="display: none"><%= incomes[i]._id %></td>
+                <td class="hiden" style="">
+                    <div class="line">
+                        <input type="button" class="supp" value="حدف" onclick="sup(this)">
+                        <input type="button" class="change" value="تغيير" onclick="edit(this)">
+                    </div>
+                </td>
+                <td ><%= incomes[i]. note%></td>
+                <td ><%= incomes[i]. value%></td>
+                <td ><%= incomes[i]. transferDate.toISOString().slice(0,10).split("-").reverse().join("-")%></td>
+                <td ><%= incomes[i]. documentNumber%></td>
+                <td ><%= incomes[i]. accountantCode%></td>
+                <td ><%= incomes[i]. source%></td>
+            </tr>
+            <% } %>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td ></td>
+                    <td ><%= sumValue%></td>
+                    <td ></td>
+                    <td colspan="4" style="text-align: center">مجموع المداخيل</td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </div>
+
+    <% } else { %>
+    <div class="error">
+        <img src="/images/database.png" alt="">
+        <div class="msgError">
+            <p>لايوجد بيانات بهاته الاختيارات </p>
+        </div>
+    </div>
+    <% } %>
+
+</div>

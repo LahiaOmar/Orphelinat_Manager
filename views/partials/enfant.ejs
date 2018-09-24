@@ -1,0 +1,31 @@
+<div id="<%='section_'+(i+1)%>" class="section" onclick="<%='clicker('+(i+1)+')'%>">
+    <img src="images/baby.png" alt="home" class="logo">
+    <span>الأطفال</span>
+    <img src="images/arrow-point-to-right.png" alt="arrow" class="arrow">
+</div>
+<ul id=<%='element_'+(i+1)%> class="element">
+    <li onclick="synchronize('enfant','ajoute')">
+        <div class="barLine">
+            <img src="images/fond-4.png">
+        </div>
+        <p class="contenu">الملف الشخصي الطفل</p>
+    </li>
+    <li onclick="synchronize('enfant','list')">
+        <div class="barLine">
+            <img src="images/fond-4.png">
+        </div>
+        <p class="contenu">قائمة الأطفال</p>
+    </li>
+    <li onclick="synchronize('enfant','benificiaire')">
+        <div class="barLine">
+            <img src="images/fond-4.png">
+        </div>
+        <p class="contenu">سجل المستفيدين </p>
+    </li>
+    <li onclick="synchronize('enfant','listBenificiaire')">
+        <div class="barLine">
+            <img src="images/fond-4.png">
+        </div>
+        <p class="contenu">قائمة المستفيدين</p>
+    </li>
+</ul>

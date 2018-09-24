@@ -1,0 +1,28 @@
+<div id="panel">
+    <div class="title">
+        <h1>قائمةالمستخدمون</h1>
+    </div>
+    <input type="hidden" name="mod" value="user" class="text" >
+    <input type="hidden" name="fich" value="users" class="text" >
+    <table>
+        <thead>
+        <tr>
+            <th> حدف</th>
+            <th>المهمة </th>
+            <th>اسم المستخدم</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%if(user.length !== 0){%>
+        <%for(var i=0; i< user.length; i++) { %>
+        <tr>
+            <td style="display: flex"><input type="button" class="supp" value="مسح" onclick="sup(this)"></td>
+            <td style="display: none"><%= user[i]. _id %></td>
+            <td ><%= user[i]. access%></td>
+            <td ><%= user[i]. login%></td>
+        </tr>
+        <% } %>
+        <%}%>
+        </tbody>
+    </table>
+</div>

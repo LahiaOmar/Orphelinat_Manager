@@ -1,0 +1,115 @@
+<div id="panel">
+    <div class="title">
+        <h3>قائمة الأطفال</h3>
+    </div>
+
+
+    <div class="selectYear">
+        <form action="/docx" method="post" class="formSend">
+            <input type="hidden" name="mod" value="kid" class="text">
+            <input type="hidden" name="fich" value="enfant" class="text">
+            <select name="type" id="select" class="type">
+                <% for(var i=0; i<choice.length; i++){ %>
+                    <%if(i == selected){%>
+                        <option  selected><%= choice[i] %></option>
+                    <%}else{%>
+                        <option ><%= choice[i] %></option>
+                    <%}%>
+                <%}%>
+            </select>
+            <button type="submit" id="search" class="search" >بحث</button>
+            <input type="submit" class="print" value="">
+        </form>
+    </div>
+    <div id="table">
+        <table>
+            <thead>
+            <tr>
+                <th class="hiden">العمليات</th>
+                <th>المشرفة التربوية</th>
+                <th>رقم المرقد</th>
+                <th>رقم الغرفة</th>
+                <th>رقم ب.ت.و للأم</th>
+                <th>رقم ب.ت.و للأب</th>
+                <th>رقم المحضر </th>
+                <th>الحالة الصحية</th>
+                <th>مكان الازدياد</th>
+                <th>رقم ب.ت.و</th>
+                <th class="hiden">التلقيحات</th>
+                <th>رقم التسجيل</th>
+                <th>مدة الإقامة</th>
+                <th>المؤسسة السابقة </th>
+                <th>تاريخ الوفاة</th>
+                <th>تاريخ المغادرة</th>
+                <th>سبب الالتحاق بالمؤسسة</th>
+                <th>تاريخ الالتحاق بالمؤسسة</th>
+                <th>الهاتف</th>
+                <th>اسم الأم</th>
+                <th>سم الأب</th>
+                <th>الحالة الاجتماعية</th>
+                <th>الجنس</th>
+                <th>تاريخ الازدياد</th>
+                <th>الاسم الشخصي والعائلي</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%if(kids.length !== 0){%>
+                <% for(var i = 0; i < kids.length; i++) { %>
+            <tr>
+                <td style="display: none"><%= kids[i]._id %></td>
+                <td class="hiden" style="">
+                    <div class="line">
+                        <input type="button" class="supp" value="حدف" onclick="sup(this)">
+                        <input type="button" class="change" value="تغيير" onclick="edit(this)">
+                        <input type="button" class="change" value="print" onclick="printJugment(this)">
+                    </div>
+                </td>
+                <td><%= kids[i].Supervisor %></td>
+                <td><%= kids[i].nbBed %></td>
+                <td><%= kids[i].nbRoom %></td>
+                <td><%= kids[i].motherCIN %></td>
+                <td><%= kids[i].fatherCIN %></td>
+                <td><%= kids[i].recordNumber %></td>
+                <td><%= kids[i].healthState %></td>
+                <td><%= kids[i].birthPlace %></td>
+                <td><%= kids[i].CIN %></td>
+                <td class="hiden"><input type="button" class="change" value="التلقيحات " onclick="vaccination(this)"></td>
+                <td><%= kids[i].RegistrationNumber %></td>
+                <td><%= kids[i].hostingDays %></td>
+                <td><%= kids[i].previousAssociation %></td>
+                <td>
+                    <% if(kids[i].deathDate !== null){ %>
+                        <%=kids[i].deathDate.toISOString().slice(0, 10).split('-').join(','); %>
+                    <%} %>
+                </td>
+                <td>
+                    <% if(kids[i].leavingDate !== null){ %>
+                        <%=kids[i].leavingDate.toISOString().slice(0, 10).split('-').join(','); %>
+                    <%} %>
+                </td>
+                <td><%= kids[i].cause %></td>
+                <td><%= kids[i].dateOfRegistration.toISOString().slice(0, 10).split('-').reverse().join(","); %></td>
+                <td class="phoneNb">
+
+                    <%= kids[i].phoneNumber.split(" ").reverse() %>
+                </td>
+                <td><%= kids[i].motherName %></td>
+                <td><%= kids[i].fatherName %></td>
+                <td><%= kids[i].socialState %></td>
+                <td><%= kids[i].gender %></td>
+                <td>
+                    <%if(kids[i].birthday !== null){%>
+                        <%= kids[i].birthday.toISOString().slice(0, 10).split('-').reverse().join(","); %>
+                    <%}%>
+                </td>
+                <td><%= kids[i].name %></td>
+
+            </tr>
+            <% } %>
+            <%}%>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

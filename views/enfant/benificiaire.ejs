@@ -1,0 +1,77 @@
+<div id="panel">
+
+    <form >
+        <div class="title">
+            <h1>سجل المستفيدين</h1>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text"  name="kidName" class="text"  required></div>
+            <div class="label" pattern=".{2,}"> <label for="">الاسم الكامل</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="date" name="birthDay" class="text"  required></div>
+            <div class="label"> <label for="">تاريخ الازدياد</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" name="birthPlace" class="text" required pattern=".{2,}"></div>
+            <div class="label"> <label for="">مكان الازدياد</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" name="CIN" class="text"  pattern=".{6,}"></div>
+            <div class="label" > <label for="">رقم ب.ت.و</label></div>
+        </div>
+
+        <div class="form_element">
+            <div class="input" ><input type="text" name="familyState" class="text" required pattern=".{1,}"></div>
+            <div class="label" > <label for="">الوضعية العائلية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="date" name="dateOfRegistration" class="text" required></div>
+            <div class="label"> <label for="">تاريخ الالتحاق بالمؤسسة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" name="serialNumber" class="text" required></div>
+            <div class="label"> <label for="">رقم التسجيل</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="date" name="leavingDay" class="text" ></div>
+            <div class="label"> <label for="">تاريخ المغادرة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" name="healthState" class="text" required pattern=".{2,}"></div>
+            <div class="label" > <label for="">الحالة الصحية</label></div>
+        </div>
+
+            <input type="hidden" name="mod" value="benificiaire" class="text">
+            <div class="title">
+                <h1>معلومات عن أسرة المستفيد</h1>
+            </div>
+
+            <div class="form_element">
+                <div class="input" ><input type="text" name="familyName" class="text"  ></div><div class="label"  > <label for="">اسم الولي</label></div>
+            </div>
+            <div class="form_element">
+                <div class="input" ><input type="text" name="familyCIN" class="text" ></div><div class="label" > <label for="">رقم ب.ت.و</label></div>
+            </div>
+            <div class="form_element">
+                <div class="input" ><input type="text" name="address" class="text"  ></div><div class="label"> <label for="">مكان الإقامة</label></div>
+            </div>
+            <div class="form_element">
+                <div class="input" ><input type="text" name="phoneNumber" class="text"  ></div><div class="label"> <label for="">الهاتف</label></div>
+            </div>
+            <div class="form_element">
+                <div class="input" ><input type="text" name="job" class="text"  ></div><div class="label"> <label for="">المهنة</label></div>
+            </div>
+            <div class="form_element">
+                <div class="input" ><input type="text" name="socialState" class="text"  ></div><div class="label"> <label for="">الوضعية الاجتماعية</label></div>
+            </div>
+            <div class="form_element">
+                <div class="input" ><input type="text" name="note" class="text"  ></div><div class="label"> <label for="">ملاحظة</label></div>
+            </div>
+
+            <div class="submitLoding">
+                <img class="loding" src="../images/reload.png" alt="">
+                <button type="submit" id="submit"class="submit">تسجيل</button>
+            </div>
+    </form>
+</div>

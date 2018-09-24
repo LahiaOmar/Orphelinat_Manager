@@ -1,0 +1,62 @@
+<div id=<%= 'section_'+(i + 1) %> class="section" onclick="<%= 'clicker('+(i + 1)+')' %>">
+    <img src="../images/warehouse.png" alt="home" class="logo">
+    <span>المخزن</span>
+    <img src="../images/arrow-point-to-right.png" alt="arrow" class="arrow">
+</div>
+<ul id=<%= 'element_'+(i + 1) %> class="element">
+    <div class="section_titre">
+        <div class="barLine">
+            <img src="images/fond-4.png" class="barr">
+        </div>
+        <p class="contenu">المواد المستهلكة</p>
+    </div>
+    <li onclick="synchronize('stock','track')">
+        <div class="barLine">
+            <img src="images/fond-4.png">
+        </div>
+        <p class="contenu">تسجيل</p>
+    </li>
+
+    <li onclick="synchronize('stock','outcomeTrack')">
+        <div class="barLine">
+            <img src="images/fond-4.png">
+        </div>
+        <p class="contenu">جرد</p>
+    </li>
+    <div class="section_titre">
+        <div class="barLine">
+            <img src="images/fond-4.png" class="barr">
+        </div>
+        <p class="contenu">المواد الوافدة</p>
+    </div>
+    <li onclick="synchronize('stock','valorisation')">
+        <div class="barLine">
+            <img src="../images/fond-4.png">
+        </div>
+        <p class="contenu">تسجيل</p>
+    </li>
+    <li onclick="synchronize('stock','incomeTrack')">
+        <div class="barLine">
+            <img src="../images/fond-4.png">
+        </div>
+        <p class="contenu">جرد</p>
+    </li>
+    <div class="section_titre">
+        <div class="barLine">
+            <img src="../images/fond-4.png" class="barr">
+        </div>
+        <p class="contenu">المخزون</p>
+    </div>
+    <li onclick="synchronize('stock','products')">
+        <div class="barLine">
+            <img src="../images/fond-4.png">
+        </div>
+        <p class="contenu">قائمة المنتوجات</p>
+    </li>
+    <li onclick="synchronize('stock','addProduct')">
+        <div class="barLine">
+            <img src="../images/fond-4.png">
+        </div>
+        <p class="contenu">إضافة منتوج</p>
+    </li>
+</ul>

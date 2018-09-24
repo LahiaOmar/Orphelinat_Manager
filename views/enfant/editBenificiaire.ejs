@@ -1,0 +1,95 @@
+<div id="panel">
+    <div class="title">
+        <h1>سجل المستفيدين</h1>
+    </div>
+    <form >
+        <input type="hidden" name="mod" value="benificiaire" class="text">
+        <input type="hidden" name="id" value="<%= data[0].id %>" class="text">
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].kidName%>"   name="kidName" class="text"  ></div>
+            <div class="label" pattern=".{2,}"> <label for="">الاسم الكامل</label></div>
+        </div>
+        <div class="form_element">
+            <%if(data[0].birthDay !== null){%>
+                <div class="input" ><input type="date" value="<%= data[0].birthDay.toISOString().slice(0,10)%>" name="birthDay" class="text"  ></div>
+            <%}else{%>
+                <div class="input" ><input type="date" value="" name="birthDay" class="text"  ></div>
+            <%}%>
+            <div class="label"> <label for="">تاريخ الازدياد</label></div>
+        </div>
+        <div class="form_element">
+            <%if(data[0].birthPlace !== null){%>
+            <div class="input" ><input type="text" value="<%= data[0].birthPlace%>" name="birthPlace" class="text" ></div>
+            <%}else{%>
+                <div class="input" ><input type="text" value="" name="birthPlace" class="text" ></div>
+            <%}%>
+            <div class="label"> <label for="">مكان الازدياد</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].CIN%>" name="CIN" class="text" ></div>
+            <div class="label" > <label for="">رقم ب.ت.و</label></div>
+        </div>
+
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].familyState%>" name="familyState" class="text" ></div>
+            <div class="label" > <label for="">الوضعية العائلية</label></div>
+        </div>
+        <div class="form_element">
+            <%if(data[0].dateOfRegistration !== null){%>
+                <div class="input" ><input type="date" value="<%= data[0].dateOfRegistration.toISOString().slice(0,10)%>" name="dateOfRegistration" class="text" ></div>
+            <%}else{%>
+                <div class="input" ><input type="date" value="" name="dateOfRegistration" class="text" ></div>
+            <%}%>
+            <div class="label"> <label for="">تاريخ الالتحاق بالمؤسسة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].serialNumber%>" name="serialNumber" class="text" ></div>
+            <div class="label"> <label for="">رقم التسجيل</label></div>
+        </div>
+        <div class="form_element">
+            <%if(data[0].leavingDay !== null){%>
+            <div class="input" ><input type="date" value="<%= data[0].leavingDay.toISOString().slice(0,10)%>" name="leavingDay" class="text" ></div>
+            <%}else{%>
+                <div class="input" ><input type="date" value="" name="leavingDay" class="text" ></div>
+            <%}%>
+            <div class="label"> <label for="">تاريخ المغادرة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].healthState%>" name="healthState" class="text"  ></div>
+            <div class="label" > <label for="">الحالة الصحية</label></div>
+        </div>
+
+
+        <div class="title">
+            <h1>معلومات عن أسرة المستفيد</h1>
+        </div>
+
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].familyName%>" name="familyName" class="text"  ></div><div class="label"  > <label for="">اسم الولي</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].familyCIN%>" name="familyCIN" class="text"  ></div><div class="label" > <label for="">رقم ب.ت.و</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].address%>" name="address" class="text"  ></div><div class="label"> <label for="">مكان الإقامة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].phoneNumber%>" name="phoneNumber" class="text"  "></div><div class="label"> <label for="">الهاتف</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].job%>" name="job" class="text"  ></div><div class="label"> <label for="">المهنة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].socialState%>" name="socialState" class="text"  ></div><div class="label"> <label for="">الوضعية الاجتماعية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].note%>" name="note" class="text"  ></div><div class="label"> <label for="">ملاحظة</label></div>
+        </div>
+
+        <div class="submitLoding">
+            <img class="loding" src="../images/reload.png" alt="">
+            <button type="submit" id="edit"class="submit">تسجيل</button>
+        </div>
+        <input type="button" class="print" value="" onclick="printe('id')">
+    </form>
+</div>

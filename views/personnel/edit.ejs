@@ -1,0 +1,53 @@
+<div id="panel">
+    <div class="title">
+        <h1>سجل المستخدمون</h1>
+    </div>
+
+    <form >
+        <input type="hidden" name="mod" value="employee" class="text">
+        <input type="hidden" name="id" value="<%= data[0]. _id %>" class="text">
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].firstName%>"  name="firstName" class="text"  > </div> <div class="label"><label for="">الاسم العائلي</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].lastName%>" name="lastName" class="text" > </div> <div class="label"><label for="">الاسم الشخصي</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="date" value="<%= data[0].birthDay.toISOString().slice(0,10)%>" name="birthDay" class="date"  >  </div> <div class="label"><label for="">تاريخ الازدياد</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].birthPlace%>" name="birthPlace" class="text" > </div> <div class="label"><label for="">مكان الازدياد</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].CIN%>" name="CIN" class="text"  > </div> <div class="label"><label for="">رقم البطاقة الوطنية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].CNSS%>" name="CNSS" class="text"  > </div> <div class="label"><label for="">رقم التسجيل في ص.و.ض.ج</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="date" value="<%= data[0].dateOfRegistration%>" name="dateOfRegistration" class="text"  > </div> <div class="label"><label for="">تاريخ التسجيل </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="date" value="<%if(data[0]. dateOfLeaving !== null){%><%=data[0]. dateOfLeaving%><%}%>" name="dateOfLeaving" class="text" > </div> <div class="label"><label for="">تاريخ مغادرة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].phoneNumber%>" name="phoneNumber" class="text" > </div> <div class="label"><label for="">رقم الهاتف</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].address%>" name="address" class="text" > </div> <div class="label"><label for="">العنوان</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].role%>" name="role" class="text" > </div> <div class="label"><label for="">المهمة داخل المركز</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" value="<%= data[0].academicDegree%>" name="academicDegree" class="text" > </div> <div class="label"><label for="">المستوى الدراسي</label></div>
+        </div>
+        <div class="submitLoding">
+            <img class="loding" src="../images/reload.png" alt="">
+            <button type="submit" id="edit"class="submit">تسجيل</button>
+        </div>
+        <input type="button" class="print" value="" onclick="printe('id')">
+    </form>
+</div>
+
+<script src="../stylesheets/forms.js"></script>

@@ -1,0 +1,102 @@
+
+
+<div id="panel">
+    <div class="title">
+        <h1> النفقات </h1>
+    </div>
+    <div class="selectYear">
+
+        <div class="selectViv">
+            <form action="/docx" method="post" class="formSend">
+                <select name="year" id="select">
+                    <%for(var i =0; i < years.length; i++){%>
+                    <option <% if(years[i]==selected){ %>
+                            selected
+                            <%}%>
+                    >
+                        <%= years[i] %></option>
+                    <% } %>
+                </select>
+                <input type="hidden" name="mod" value="spent" class="text" id="mod">
+                <input type="hidden" name="fich" value="finance" class="text">
+                <input type="hidden" name="genre" value="editSpent" class="text">
+                <select name="months" id="select">
+                    <option >NaN</option>
+                    <%for(var i =0; i < month.length; i++){%>
+                    <option <% if(i==selectedMonth){ %>
+                            selected
+                            <%}%>
+                            value="<%=i+1%>"
+                    >
+                        <%= month[i] %></option>
+                    <% } %>
+                </select>
+                <a  id="search" class="search" >بحث</a>
+                <button type="submit" class="print" value=""></button>
+            </form>
+
+        </div>
+    </div>
+
+    <% if(found != false) {%>
+    <div class="table1" >
+        <table>
+            <thead>
+            <tr>
+                <th class="hiden">العمليات</th>
+                <th>المرجع المحاسبي </th>
+                <th>لفائدة </th>
+                <th>مبلغ الشيك بالدرهم </th>
+                <th>تاريخ صرف الشيك </th>
+                <th>رقم الشيك </th>
+                <th>الرمز المحاسب </th>
+                <th >العمليات</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%var sumCheckValue=0 %>
+            <%for(var i=0; i< spends.length; i++) { %>
+                <%sumCheckValue += spends[i]. checkValue%>
+            <tr>
+                <td style="display: none"><%= spends[i]._id %></td>
+                <td class="hiden" style="">
+                    <div class="line">
+                        <input type="button" class="supp" value="حدف" onclick="sup(this)">
+                        <input type="button" class="change" value="تغيير" onclick="edit(this)">
+                    </div>
+                </td>
+                <td ><%= spends[i]. accountingReference%></td>
+                <td ><%= spends[i]. beneficiary%></td>
+                <td ><%= spends[i]. checkValue%></td>
+                <td ><%= spends[i]. paymentDate.toISOString().slice(0,10).split("-").reverse().join("-")%></td>
+                <td ><%= spends[i]. checkNumber%></td>
+                <td ><%= spends[i]. accountantCode%></td>
+                <td ><%= spends[i]. operation%></td>
+            </tr>
+            <% } %>
+
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td ></td>
+                    <td ></td>
+                    <td ><%= sumCheckValue%></td>
+                    <td colspan="4" style="text-align: center">مجموع النفقات</td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </div>
+    <% } else { %>
+    <div class="error">
+        <img src="/images/database.png" alt="">
+        <div class="msgError">
+            <p>لايوجد بيانات بهاته الاختيارات </p>
+        </div>
+    </div>
+    <% } %>
+
+</div>
+

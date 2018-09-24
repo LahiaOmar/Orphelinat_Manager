@@ -1,0 +1,54 @@
+<div id="panel">
+    <div class="title">
+        <h1>التجهيزات</h1>
+    </div>
+    <input type="hidden" name="mod" value="equipment" class="text">
+    <form>
+        <div class="form_salle">
+            <select name="salleName" id="chamberId" class="text">
+                <%for(var i=0; i<salleNames.length; i++) {%>
+                <option ><%= salleNames[i]%></option>
+                <%}%>
+            </select>
+            <div class="label">
+                <label for="" class="label" >اسم القاعة </label>
+            </div>
+        </div>
+        <div class="form_element">
+            <div class="input">
+                <select name="name" id="name" class="text" required>
+                    <% for(var i = 0; i < names.length; i++) { %>
+                    <option value="<%= names[i] %>" name=""><%= names[i] %></option>
+                    <% } %>
+                </select>
+            </div>
+
+            <div class="label"><label for="">اسم الجهاز </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input">
+                <select name="genre" id="name" class="text" required>
+                    <option >إضافة</option>
+                    <option >حدف</option>
+                </select>
+            </div>
+
+            <div class="label"><label for="">عملية </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="note" class="text" ></div>
+            <div class="label"><label for="">ملاحضة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="number" name="quantity" class="text" required></div>
+            <div class="label"><label for="">الكمية</label></div>
+        </div>
+
+        <div class="submitLoding">
+            <img class="loding" src="../images/reload.png" alt="">
+            <button type="submit" id="edit"class="submit">تسجيل</button>
+        </div>
+    </form>
+
+</div>
+

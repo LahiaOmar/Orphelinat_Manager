@@ -1,0 +1,19 @@
+<div id="<%='section_'+(i+1)%>" class="section" onclick="<%='clicker('+(i+1)+')'%>">
+    <img src="../images/users.png" alt="home" class="logo">
+    <span>المشرفون</span>
+    <img src="../images/arrow-point-to-right.png" alt="arrow" class="arrow">
+</div>
+<ul id=<%='element_'+(i+1)%> class="element">
+    <li onclick="synchronize('users','addUser')">
+        <div class="barLine">
+            <img src="../images/fond-4.png">
+        </div>
+        <p class="contenu">إضافة مشرفون</p>
+    </li>
+    <li onclick="synchronize('users','listUser')">
+        <div class="barLine">
+            <img src="../images/fond-4.png">
+        </div>
+        <p class="contenu">قائمة المشرفون</p>
+    </li>
+</ul>

@@ -1,0 +1,106 @@
+<div id="panel">
+    <div class="title">
+        <h1> جرد الأجور </h1>
+    </div>
+
+    <div class="selectYear">
+        <div class="selectViv">
+            <form action="/docx" method="post" class="formSend">
+                <select name="year" id="select">
+                        <%for(var i =0; i < years.length; i++){%>
+                            <% if(years[i]==selected){%>
+                                <option value="<%= years[i] %>" selected> <%= years[i] %>  </option>
+                            <%}else{%>
+                                <option value="<%= years[i]  %>"> <%= years[i] %> </option>
+                            <%}%>
+                        <% } %>
+                    </select>
+                    <select name="months" id="select">
+                        <option >NaN</option>
+                        <%for(var i =0; i < month.length; i++){%>
+                            <%if(i+1==selectedMonth){%>
+                                <option value="<%=i+1%>" selected> <%= month[i]%> </option>
+                            <%}else{%>
+                                <option value="<%=i+1%>"> <%= month[i]%> </option>
+                            <%}%>
+                        <% } %>
+                    </select>
+                    <input type="hidden" name="mod" value="salary" class="text">
+                    <input type="hidden" name="fich" value="finance" class="text">
+                    <input type="hidden" name="genre" value="editSalair" class="text">
+                    <button type="submit" id="search" class="search" >بحث</button>
+                    <input type="submit" class="print" value="">
+            </form>
+        </div>
+    </div>
+
+    <% if(found != false) {%>
+    <div class="table">
+        <table>
+            <thead>
+            <tr>
+                <th rowspan="2" class="hiden">العمليات</th>
+                <th rowspan="2">كيفية الأداء </th>
+                <th rowspan="2">المبلغ الصافي للأداء </th>
+                <th colspan="5"> اقتطاعات </th>
+                <th rowspan="2">تعويضات عائلية </th>
+                <th rowspan="2">الأجرة الإجمالية </th>
+                <th rowspan="2">زيادة في الأجرة </th>
+                <th rowspan="2">الأجرة الأساسية </th>
+                <th rowspan="2">ب.ت.و </th>
+                <th rowspan="2">المهمة </th>
+                <th rowspan="2">الاسم الشخصي والعائلي </th>
+                <th rowspan="2">ر.ت</th>
+            </tr>
+            <tr>
+                <th>التغطية الصحية</th>
+                <th>CNSS</th>
+                <th>IGR</th>
+                <th>تسبيق</th>
+                <th>غيابات</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%for(var i = 0; i<salaries.length; i++) { %>
+            <tr>
+                <td style="display: none"><%= salaries[i]._id %></td>
+                <td class="hiden" style="">
+                    <div class="line">
+                        <input type="button" class="supp" value="حدف" onclick="sup(this)">
+                        <input type="button" class="change" value="تغيير" onclick="edit(this)">
+                    </div>
+                </td>
+                <td ><%= salaries[i]. paymentMethod%></td>
+                <td ><%= salaries[i]. paymentTotal%></td>
+                <td ><%= salaries[i]. medicalInsurance%></td>
+                <td ><%= salaries[i]. CNSS%></td>
+                <td ><%= salaries[i]. IGR%></td>
+                <td ><%= salaries[i]. advance%></td>
+                <td ><%= salaries[i]. absence%></td>
+                <td ><%= salaries[i]. familyCompensation%></td>
+                <td ><%= salaries[i]. totalSalary%></td>
+                <td ><%= salaries[i]. increaseInSalary%></td>
+                <td ><%= salaries[i]. basicSalary%></td>
+                <td ><%= salaries[i]. CIN%></td>
+                <td ><%= salaries[i]. employeeRole%></td>
+                <td ><%= salaries[i]. employee%></td>
+                <td ><%= i+1%></td>
+
+            </tr>
+            <% } %>
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <% } else { %>
+    <div class="error">
+        <img src="/images/database.png" alt="">
+        <div class="msgError">
+            <p>لايوجد بيانات بهاته الاختيارات </p>
+        </div>
+    </div>
+    <% } %>
+
+</div>

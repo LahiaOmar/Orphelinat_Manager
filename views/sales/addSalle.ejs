@@ -1,0 +1,49 @@
+<div id="panel">
+    <div class="title">
+        <h1>إضافة قاعة / تجهيزات</h1>
+    </div>
+    <form>
+        <input type="hidden" name="mod" value="equipment" class="text">
+        <div class="form_salle">
+            <input type="text" disabled name="chamber_Id" class="newSalle text" required >
+
+            <select name="salleName"  class="salleNb">
+                <option>NaN</option>
+                <%for(var i=0; i<salleNames.length; i++) {%>
+                <option ><%= salleNames[i]%></option>
+                <%}%>
+            </select>
+            <div class="label">
+                <label for="" class="label" > رقم القاعة </label>
+            </div>
+        </div>
+        <div class="form_salle">
+            <input type="text"  name="donor" class="donor text" id="donor" required >
+            <label for="donor">الجهة المانحة</label>
+        </div>
+        <div class="form_salle">
+            <input type="button" id="addDiv" name="ok" value="ok" onclick="add()"></input>
+            <input type="number" name="nb" class="nb"  pattern=".[0-9]{1,}">
+            <div class="label">
+                <label for="" class="label" >عدد الأجهزة</label>
+            </div>
+        </div>
+        <div class="addDevice">
+            <div class="nbDevice">
+                <div class="nbDevice_ele">
+                    <input type="number" name="quantity"> <label for="deviceNb">:العدد  </label>
+                </div>
+                <div class="nbDevice_ele">
+                    <input type="text" name="name"> <label for="deviceName">:اسم الجهاز </label>
+                </div>
+            </div>
+        </div>
+        <div class="submitLoding">
+            <img class="loding" src="../images/reload.png" alt="">
+            <button type="submit" id="submitSalle"class="submit">تسجيل</button>
+        </div>
+
+    </form>
+
+</div>
+

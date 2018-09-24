@@ -1,0 +1,28 @@
+<div id="panel">
+    <div class="title">
+        <h1>إضافة مستخدم </h1>
+    </div>
+    <form>
+        <input type="hidden" name="mod" value="user" class="text">
+        <div class="form_element">
+            <div class="input"><input type="text" name="login" class="text" pattern=".{3,}" required ></div>
+            <div class="label"><label for="">  اسم المستخدم</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="password" pattern=".{6,}" class="text" required ></div>
+            <div class="label"><label for=""> كلمة السر</label></div>
+        </div>
+        <div class="form_element">
+            <input type="checkbox" name="acces" value="personnel"><label> الموظفون </label><br>
+            <input type="checkbox" name="acces" value="finance"><label> الشؤون المالية </label><br>
+            <input type="checkbox" name="acces" value="stock"><label> المخزن </label><br>
+            <input type="checkbox" name="acces" value="salles"><label> القاعات </label><br>
+            <input type="checkbox" name="acces" value="enfant"><label> الأطفال </label><br>
+            <div class="label"><label for="">المهمة</label></div>
+        </div>
+        <div class="submitLoding">
+            <img class="loding" src="../images/reload.png" alt="">
+            <button type="submit" id="addUser"class="submit">تسجيل</button>
+        </div>
+    </form>
+</div>

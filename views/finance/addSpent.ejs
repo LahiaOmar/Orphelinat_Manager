@@ -1,0 +1,40 @@
+<div id="panel">
+    <div class="title">
+        <h1>سجل النفقات</h1>
+    </div>
+    <form>
+        <input type="hidden" name="mod" value="spent" class="text">
+        <div class="form_element">
+            <div class="input"><input type="text" name="operation" class="text" required="" pattern=".{1,}"> </div> <div class="label"><label for="">العمليات </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="accountantCode" class="text" required=""> </div> <div class="label"><label for="">الرمز المحاسب</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="checkNumber" class="text" required="">  </div> <div class="label"><label for="">رقم الشيك </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="date" name="paymentDate" class="date" required=""> </div> <div class="label"><label for="">تاريخ صرف الشيك</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="number" name="checkValue" class="text" required=""> </div> <div class="label"><label for="">مبلغ الشيك بالدرهم</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="beneficiary" class="text" required=""> </div> <div class="label"><label for="">لفائدة </label></div>
+        </div>
+
+        <div class="form_element">
+            <div class="input"><input type="text" name="accountingReference" class="text" required=""> </div> <div class="label"><label for="">المرجع المحاسبي</label></div>
+        </div>
+
+
+        <div class="form_element">
+            <div class="input"><input type="date" name="day" class="date" required> </div> <div class="label"><label for="">يوم</label></div>
+        </div>
+
+        <div class="submitLoding">
+            <img class="loding" src="../images/reload.png" alt="">
+            <button type="submit" id="submit"class="submit">تسجيل</button>
+        </div>
+    </form>
+</div>

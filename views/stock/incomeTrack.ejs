@@ -1,0 +1,106 @@
+<div id="panel">
+    <div class="title">
+        <h1> جرد المواد الوافدة</h1>
+    </div>
+    <div class="selectYear">
+        <div class="selectViv">
+            <form action="/docx" method="post" class="formSend">
+                <select name="year" class="select" id="selectYear">
+                        <%for(var i =0; i < years.length; i++){%>
+                        <option <% if(years[i]==selected){ %>
+                                selected
+                                <%}%>
+                        >
+                            <%= years[i] %></option>
+                        <% } %>
+                    </select>
+                    <input type="hidden" name="mod" value="track" class="text">
+                    <input type="hidden" name="fich" id="fiche" value="stock" class="text">
+                    <input type="hidden" name="genre" id="genre" value="editIncome" class="text">
+                    <input type="hidden" id="type" name="type" value="income" class="text">
+                    <select name="months" class="select" id="selectMonths">
+                        <option >NaN</option>
+                        <%for(var i =0; i < month.length; i++){%>
+                        <option value="<%=i+1%>" <% if(i+1==selectedMonth){ %>
+                                selected
+                                <%}%>
+                        >
+                            <%= month[i] %></option>
+                        <% } %>
+                    </select>
+                    <select name="days" class="select" id="selectDays">
+                        <option >NaN</option>
+                        <%for(var i =0; i < days; i++){%>
+                        <option <% if((i+1)==selectedDay){ %>
+                                selected
+                                <%}%>
+                        >
+                            <%= i+1 %></option>
+                        <% } %>
+                    </select>
+        
+                    <button type="submit" id="search" class="search" >بحث</button>
+                    <input type="submit" class="print" value="" >
+            </form>
+            
+        </div>
+    </div>
+
+    <% if(found != false) {%>
+    <div class="table1">
+        <table>
+            <thead>
+            <tr>
+                <th class="hiden">العمليات</th>
+                <th>ملاحظات </th>
+                <th>مشتريات/تبرعات</th>
+                <th>االثمن الكلي</th>
+                <th>لثمن الفردي</th>
+                <th>الكمية</th>
+                <th >الاسم</th>
+                <th >اليوم</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% var total = 0 %>
+            <%for(var i=0; i< result.length; i++) { %>
+            <tr>
+                <td style="display: none"><%= result[i]._id %></td>
+                <td class="hiden" style="">
+                    <div class="line">
+                        <input type="button" class="change" value="تغيير" onclick="edit(this)">
+                    </div>
+                </td>
+                <td ><%= result[i]. note%></td>
+                <td ><%= result[i]. genre%></td>
+                <td ><%= result[i]. totalPrice%></td>
+                <td ><%= result[i]. price%></td>
+                <td ><%= result[i]. quantity%></td>
+                <td ><%= result[i]. name%></td>
+                <td ><%= result[i]. day.toISOString().slice(0, 10).split("-")%></td>
+                <% total += result[i]. totalPrice %>
+                <% } %>
+            </tr>
+            <tr>
+                <td ></td>
+                <td ></td>
+                <td ><%= total %></td>
+                <td ></td>
+                <td >المجموع الصافي</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <% } else { %>
+    <div class="error">
+        <img src="/images/database.png" alt="">
+        <div class="msgError">
+            <p>لايوجد بيانات بهاته الاختيارات </p>
+        </div>
+    </div>
+    <% } %>
+
+</div>

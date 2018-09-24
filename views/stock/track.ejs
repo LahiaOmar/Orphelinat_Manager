@@ -1,0 +1,70 @@
+<div id="panel">
+    <div class="title">
+        <h1>المواد المستهلكة</h1>
+    </div>
+    <form>
+        <input type="hidden" name="mod" value="track" class="text">
+        <input type="hidden" name="type" value="outcome" class="text" id="type">
+        <input type="hidden" name="genre" value="<%=genre%>" class="text" id="genre">
+        <input type="hidden" name="productID" value="<%=productID%>" class="text" id="productID">
+        <div class="form_element">
+            <div class="input">
+                <select name="type1" id="type1" class="text" required>
+                    <% for(var i = 0; i < type1.length; i++) { %>
+                    <option value="<%= type1[i] %>" name=""><%= type1[i] %></option>
+                    <% } %>
+                </select>
+            </div>
+
+            <div class="label"><label for="">نوع المنتج</label></div>
+        </div>
+
+        <div class="form_element">
+            <div class="input">
+                <select name="name" id="names" class="text" required>
+                    <% for(var i = 0; i < names.length; i++) { %>
+                    <option value="<%= names[i] %>" name=""><%= names[i] %></option>
+                    <% } %>
+                </select>
+            </div>
+
+            <div class="label"><label for="">الاسم </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input">
+                <select name="unit" id="unit" class="text" required>
+                    <% for(var i = 0; i < unit.length; i++) { %>
+                    <option value="<%= unit[i] %>" name=""><%= unit[i] %></option>
+                    <% } %>
+                </select>
+            </div>
+
+            <div class="label"><label for="">وحدة</label></div>
+        </div>
+        <input type="hidden" class="quantityLimit" value="<%=quantityLimit%>"  class="text">
+        <div class="form_element">
+            <div class="input"><input type="text" class="quantity text" name ="quantityStock" value=" <%=quantity[0]%>" disabled  class="text" id="quantity"></div>
+            <div class="label"><label for="">  الكمية الموجودة في المخزن </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" class="newquantity text" name="quantity" class="text" required></div>
+            <div class="label"><label for="">الكمية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="price" id="" class="text" required></div>
+            <div class="label"><label for="">لثمن الفردي</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="note" id="" class="text" ></div>
+            <div class="label"><label for="">ملااحظة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="date" name="day" class="date" required=""> </div> <div class="label"><label for="">يوم</label></div>
+        </div>
+        <div class="submitLoding">
+            <img class="loding" src="../images/reload.png" alt="">
+            <button type="submit" id="submit" class="submit">تسجيل</button>
+        </div>
+
+    </form>
+</div>

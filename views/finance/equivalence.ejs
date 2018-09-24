@@ -1,0 +1,68 @@
+<div id="panel">
+    <div class="title">
+        <h1> سجل الموازنةالعامة</h1>
+    </div>
+    <div class="selectYear">
+        <div class="selectViv">
+            <form action="/docx" method="post" class="formSend">
+                <select name="year" id="select">
+                        <% for(var i = 0; i < years.length; i++){ %>
+                        <option
+                                <% if(years[i] == selected){ %>
+                                selected
+                                <% } %>
+                        >
+                            <%= years[i] %></option>
+                        <% } %>
+                    </select>
+                    <input type="hidden" name="mod" value="equivalence" class="text">
+                    <button type="submit" id="search" class="search">بحث</button>
+                    <input type="submit" class="print" value="" >
+            </form>
+        </div>
+    </div>
+
+    <div class="equivalence">
+        <table>
+            <thead>
+            <tr>
+                <th>الموازنة بالدرهم</th>
+                <th>مجموع النفقات بالدرهم</th>
+                <th>مجموع المداخيل بالدرهم</th>
+                <th>الشهور</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% var totalIncome = 0, totalOutcome = 0, finalEquiv = 0 %>
+            <% for(var i = 1, j = 1; i < month.length; i++, j++) { %>
+            <tr>
+                <td>
+                    
+                    <%= sumIncome[i] - sumSpent[i]%>
+                </td>
+                <td>
+                    
+                    <%= sumSpent[i]%>
+                </td>
+                <td>
+                    <%= sumIncome[i]%>
+                </td>
+
+                <td> <%= month[i] %> </td>
+                <% totalIncome += sumIncome[i]  %>
+                <% totalOutcome += sumSpent[i] %>
+            </tr>
+            <% } %>
+            <tr>
+                <td><%= totalIncome - totalOutcome %></td>
+                <td><%= totalOutcome %></td>
+                <td><%= totalIncome %></td>
+                <td>المجموع الصافي</td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

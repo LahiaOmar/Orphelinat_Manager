@@ -1,0 +1,75 @@
+<div id="panel">
+    <div class="title">
+        <h3>قائمةالمستخدمون</h3>
+    </div>
+    <div class="selectYear">
+        <form action="/docx" method="post" class="formSend">
+            <input type="hidden" name="mod" value="employee" class="text" >
+            <input type="hidden" name="fich" value="personnel" class="text" >
+            <button type="submit" class="print"></button>
+        </form>
+    </div>
+
+    <div class="table">
+        <table>
+            <thead>
+            <tr>
+                <th class="hiden">تغيير / حذف</th>
+                <th>المستوى الدراسي </th>
+                <th>المهمة داخل المركز </th>
+                <th>العنوان </th>
+                <th>رقم الهاتف </th>
+                <th>رقم التسجيل في ص.و.ض.ج </th>
+                <th>رقم البطاقة الوطنية </th>
+                <th>تاريخ المغادرة</th>
+                <th>تاريخ التسجيل</th>
+                <th>مكان الازدياد </th>
+                <th>تاريخ الازدياد </th>
+                <th>الاسم الشخصي</th>
+                <th >الاسم العائلي</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%if(employees.length !== 0){%>
+                <%for(var i=0; i< employees.length; i++) { %>
+            <tr>
+                <td style="display: none"><%= employees[i]. _id %></td>
+                <td class="hiden">
+                    <div class="line">
+                        <input type="button" class="supp" value="حدف" onclick="sup(this)">
+                        <input type="button" class="change" value="تغيير" onclick="edit(this)">
+                    </div>
+                </td>
+                <td ><%= employees[i]. academicDegree%></td>
+                <td ><%= employees[i]. role%></td>
+                <td ><%= employees[i]. address%></td>
+                <td ><%= employees[i]. phoneNumber.split(' ').join(',');%></td>
+                <td ><%= employees[i]. CNSS%></td>
+                <td ><%= employees[i]. CIN%></td>
+                <%if(employees[i]. dateOfLeaving === null){%>
+                    <td><%= employees[i]. dateOfLeaving%></td>
+                <%} else{%>
+                    <td><%= employees[i]. dateOfLeaving.toISOString().slice(0, 10).split('-').join(',')%></td>
+                <%}%>
+                <%if(employees[i]. dateOfRegistration === null){%>
+                    <td><%= employees[i]. dateOfRegistration%></td>
+                <%} else{%>
+                    <td><%= employees[i]. dateOfRegistration.toISOString().slice(0, 10).split('-').join(',')%></td>
+                <%}%>
+                <td ><%= employees[i]. birthPlace%></td>
+                <%if(employees[i]. birthDay === null){%>
+                    <td><%= employees[i]. birthDay%></td>
+                <%} else{%>
+                    <td><%= employees[i]. birthDay.toISOString().slice(0, 10).split('-').join(',')%></td>
+                <%}%>
+                <td ><%= employees[i]. lastName%></td>
+                <td ><%= employees[i]. firstName%></td>
+
+            </tr>
+            <% } %>
+            <%}%>
+            </tbody>
+
+        </table>
+    </div>
+</div>

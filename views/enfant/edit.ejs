@@ -1,0 +1,166 @@
+<div id="panel">
+    <div class="title">
+        <h1>الملف الشخصي للمستفيد</h1>
+    </div>
+    <div>
+        <input type="button" class="print" value="" onclick="printe('id')">
+    </div>
+    <form >
+        <input type="hidden" name="mod" value="kid" class="text">
+        <input type="hidden" name="id" value="<%= data[0]._id %>" class="text">
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0]. name %>" type="text" name="name" class="text"required></div>
+            <div class="label"><label for="">الاسم الشخصي والعائلي</label></div>
+        </div>
+        <div class="form_element">
+            <% if(data[0].birthday !== null){%>
+                <div class="input"><input type="date" value="<%= data[0].birthday.toISOString().slice(0,10) %>" name="birthday" class="date" required></div>
+            <%}else{%>
+                <div class="input"><input type="date" value="" name="birthday" class="date" ></div>
+            <%}%>
+            <div class="label"><label  for="">تاريخ الازدياد</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" class="input" >
+                <select name="gender" class="text" required>
+                    <%if( data[0].gender === "ذكر" ){%>
+                        <option selected>ذكر</option>
+                        <option>أنثى</option>
+                    <%}else{%>
+                        <option>ذكر</option>
+                        <option selected>أنثى</option>
+                    <%}%>
+                </select>
+            </div>
+            <div class="label"><label for=""> الجنس </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].socialState %>" type="text" name="socialState" class="text" required></div>
+            <div class="label"><label for="">الحالة الاجتماعية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].fatherName %>" type="text" name="fatherName" class="text" required></div>
+            <div class="label"><label for="">سم الأب</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].motherName %>" type="text" name="motherName" class="text" required></div>
+            <div class="label"><label for="">اسم الأم</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].phoneNumber %>" type="tel" name="phoneNumber" id="" class="text" required></div>
+            <div class="label"><label for="">الهاتف</label></div>
+        </div>
+        <div class="form_element">
+            <%if(data[0].dateOfRegistration !== null){%>
+                <div class="input"><input value="<%= data[0].dateOfRegistration.toISOString().slice(0,10) %>" type="date" name="dateOfRegistration" class="date" id="" required></div>
+            <%}else{%>
+                <div class="input"><input value="" type="date" name="dateOfRegistration" class="date" id="" required></div>
+            <%}%>
+            <div class="label"><label for="">تاريخ الالتحاق بالمؤسسة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].cause %>" type="text" name="cause" class="text" required></div>
+            <div class="label"><label for="">سبب الالتحاق بالمؤسسة</label></div>
+        </div>
+        <div class="form_element">
+            <% if(data[0].leavingDate !== null){ %>
+                <div class="input"><input value="<%= data[0].leavingDate.toISOString().slice(0,10) %>" type="date" name="leavingDate" class="date" id="" required></div>
+            <%}else{%>
+                <div class="input"><input value="" type="date" name="leavingDate" class="date" id="" ></div>
+            <%}%>
+            <div class="label"><label for="">تاريخ المغادرة</label></div>
+        </div>
+        <div class="form_element">
+            <% if(data[0].deathDate !== null){ %>
+            <div class="input"><input value="<%= data[0].deathDate.toISOString().slice(0,10) %>" type="date" name="deathDate" class="date" id="" required></div>
+            <%}else{%>
+                <div class="input"><input value="" type="date" name="deathDate" class="date" id="" ></div>
+            <%}%>
+            <div class="label"><label for="">تاريخ الوفاة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].previousAssociation %>" type="text" name="previousAssociation" class="text" required></div>
+            <div class="label"><label for="">المؤسسة السابقة </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].hostingDays %>" type="text" name="hostingDays" class="text" id="" required></div>
+            <div class="label"><label for="">مدة الإقامة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].RegistrationNumber %>" type="text" name="CIN" class="text" required></div>
+            <div class="label"> <label for="">رقم التسجيل</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].birthPlace %>" type="text" name="birthPlace" class="text" required></div>
+            <div class="label"><label for="">مكان الازدياد</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].healthState %>" type="text" name="healthState" class="text" required></div>
+            <div class="label"><label for="">الحالة الصحية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].recordNumber %>" type="text" name="recordNumber" class="text" required></div>
+            <div class="label"><label for="">رقم المحضر </label></div>
+        </div>
+        <div class="form_element">
+            <%if(data[0].recordDate){%>
+            <div class="input"><input value="<%= data[0].recordDate.toISOString().slice(0,10) %>" type="date" name="recordDate" class="text"  oninvalid="msgSubmit(this)"></div>
+            <%}else{%>
+            <div class="input"><input value="<%= data[0].recordDate%>" type="date" name="recordDate" class="text"  oninvalid="msgSubmit(this)"></div>
+            <%}%>
+            <div class="label"><label for="">تاريخ المحضر </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].recordSource %>" type="text" name="recordSource" class="text"  oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">مصدر المحضر </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].abandonPlace %>" type="text" name="abandonPlace" class="text"  oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">مكان التخلي </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].fatherCIN %>" type="text" name="fatherCIN" class="text" ></div>
+            <div class="label"><label for="">رقم ب.ت.و للأب</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].motherCIN %>" type="text" name="motherCIN" class="text" ></div>
+            <div class="label"><label for="">رقم ب.ت.و للأم</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].nbRoom %>" type="text" name="nbRoom" class="text" required></div>
+            <div class="label"><label for="">رقم الغرفة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].nbBed %>" type="text" name="nbBed" class="text" required></div>
+            <div class="label"><label for="">رقم المرقد</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input value="<%= data[0].Supervisor %>" type="text" name="Supervisor" class="text" required></div>
+            <div class="label"><label for="">المشرفة التربوية</label></div>
+        </div>
+        <div class="title">
+            <h1>vaccination</h1>
+        </div>
+        <% for(var i=0; i< data[0].vaccination.length; i++){%>
+        <% if(data[0].vaccination[i].value !== null){%>
+        <div class="form_element">
+            <input type="date" class="text"
+                    <%= "disabled" %>
+                   value="<%= data[0].vaccination[i].value.toISOString().slice(0,10)%>"
+
+
+            >
+            <label for="" class="label"><%= data[0].vaccination[i].name %></label>
+        </div>
+        <%}%>
+
+
+        <%}%>
+        <div class="submitLoding">
+            <img class="loding" src="../images/reload.png" alt="">
+            <button type="submit" id="edit"class="submit">تغيير</button>
+        </div>
+
+
+    </form>
+</div>

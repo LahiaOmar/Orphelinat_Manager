@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh;*/
+    width: 100vw;
+}
+table{
+    box-shadow: none;
+}
+.type{
+    display: none ;
+}
+.search{
+    display: none;
+}
+#table1{
+    margin: 0px;
+    width: auto;
+}
+#table{
+    margin : 0;
+    display: flex;
+    justify-content: center;
+}
+
+.label{
+    font-size: 20px;
+}
+.text{
+    font-size: 18px;
+}
+.date{
+    font-size: 18px;
+}
+.centre img{
+    width: 193px;
+    height: 112px;
+}
+.title{
+    border : none;
+    margin-top: 10px;
+}
+td{
+    padding: 10px;
+    /* display: table-cell; */
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 2px;
+    font-size: 14px;
+    /* height: auto; */
+    border : 1px solid black;
+}
+tr{
+    box-shadow: none;
+    border : 1px solid black;
+}
+input[required]:invalid {
+    border : 1px solid black;
+}
+
+input[required]:valid {
+    border : 1px solid black;
+}
+select[required]:invalid {
+    border : 1px solid black;
+}
+
+select[required]:valid {
+    border : 1px solid black;
+}
+select{
+    -webkit-appearance:none;
+}
+input{
+    border: 1px solid black;
+}
+.print {
+    display : none;
+}
+#edit {
+    display: none;
+}
+.edit {
+    display : none;
+}
+.submitLoding{
+    display: none;
+}
+#panel{
+    border : none;
+    overflow: hidden;
+}
+.selectViv{
+    display: none;
+
+}
+.supp{display: none;}
+.print{display: none;}
+.change{display: none;}
+.hiden{display: none;}
+.topPage{
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+}
+.jugement{
+    margin-top : 80px;
+    display: flex;
+    align-items: center;
+    width: 1024px;
+    padding-left: 150px;
+    padding-right:150px;
+    flex-direction: column;
+    font-size: 20px;
+
+}
+th{
+    border : none;
+}
+.titlePage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.object{
+}
+.demande{}
+.infoEnfant{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.finPagee{}
+.sig{
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+}
+p{
+    font-size: inherit;
+    text-align: inherit;
+}
+.listVac{
+    display: block ;
+}
+.morris-hover{
+    display: none;
+}

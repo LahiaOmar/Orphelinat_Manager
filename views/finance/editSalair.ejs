@@ -1,0 +1,76 @@
+<div id="panel">
+    <div class="title">
+        <h1>سجل الأجور </h1>
+    </div>
+    <form>
+        <input type="hidden" name="mod" value="salary" class="text">
+        <div class="form_element">
+            <div class="input">
+                <select name="employee" id="employeeList" class="text" required>
+                    <option ><%= data[0].employee %></option>
+                </select>
+            </div>
+
+            <div class="label"><label for="">الاسم الشخصي والعائلي</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="employeeRole" class="text" required value="<%= data[0].employeeRole %>"></div>
+            <div class="label"><label for="">المهمة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="CIN" class="text" required value="<%= data[0].CIN %>"></div>
+            <div class="label"><label for="">ب.ت.و </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="basicSalary" class="text" required value="<%= data[0].basicSalary %>"></div>
+            <div class="label"><label for="">الأجرة الأساسية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="number" name="increaseInSalary" class="text" required value="<%= data[0].increaseInSalary %>"></div>
+            <div class="label"><label for="">زيادة في الأجرة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="number" name="totalSalary" class="text" required value="<%= data[0].totalSalary %>"></div>
+            <div class="label"><label for="">الأجرة الإجمالية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="number" name="familyCompensation" class="text" required value="<%= data[0].familyCompensation %>"></div>
+            <div class="label"><label for="">تعويضات عائلية </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="absence" class="text" required value="<%= data[0].absence %>"></div>
+            <div class="label"><label for="">غيابات</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="number" name="advance" class="text" required value="<%= data[0].advance %>"></div>
+            <div class="label"><label for="">تسبيق</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="number" name="IGR" class="text" required value="<%= data[0].IGR %>"></div>
+            <div class="label"><label for="">IGR</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="CNSS" class="text" required value="<%= data[0].CNSS %>" ></div>
+            <div class="label"><label for="">CNSS</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="medicalInsurance" class="text" required value="<%= data[0].medicalInsurance %>"></div>
+            <div class="label"><label for="">التغطية الصحية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="paymentTotal" class="text" required value="<%= data[0].paymentTotal %>"></div>
+            <div class="label"><label for="">المبلغ الصافي للأداء</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="paymentMethod" class="text" required value="<%= data[0].paymentMethod %>"></div>
+            <div class="label"><label for="">كيفية الأداء </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="date" name="day" class="date" value="<%= data[0].day.toISOString().slice(0, 10)%>" required > </div> <div class="label"><label for="">يوم</label></div>
+        </div>
+        <div class="submitLoding">
+            <img class="loding" src="../images/reload.png" alt="">
+            <button type="edit" id="edit"class="submit">تغيير</button>
+        </div>
+    </form>
+</div>

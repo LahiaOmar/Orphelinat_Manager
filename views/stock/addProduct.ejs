@@ -1,0 +1,55 @@
+<div id="panel">
+    <div class="title">
+        <h1>إضافة منتوج  </h1>
+    </div>
+    <form  id="formulaire">
+        <input type="hidden" name="mod" value="product" class="text">
+        <div class="form_element">
+            <div class="input">
+                <input type="text" name="name" class="text"  id=""required>
+            </div>
+            <div class="label"><label for="">الاسم </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input">
+                <input type="text" name="type1" class="text"  id=""required>
+            </div>
+
+            <div class="label"><label for="">نوع المنتج</label></div>
+        </div>
+        <div class="form_element" >
+            <select name="unit" id="" class="text" >
+                <option name="">kg</option>
+                <option name="">L</option>
+                <option name="">unit</option>
+            </select>
+            <div class="label"><label for="">وحدة </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input">
+                <input type="Number" name="quantity" class="text"  id=""required>
+            </div>
+
+            <div class="label"><label for="">الكمية</label></div>
+        </div>
+        <div class="form_element">
+            <select name="genre" class="text" >
+                <option> تبرعات</option>
+                <option> مشتريات</option>
+            </select>
+            <div class="label"><label for="">تبرعات/مشتريات</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input">
+                <input type="Number" name="quantityLimit" class="text"  id=""required>
+            </div>
+
+            <div class="label"><label for="">الحد الأدنى </label></div>
+        </div>
+
+        <div class="submitLoding">
+            <img class="loding" src="../images/reload.png" alt="">
+            <button type="submit" id="submit"class="submit">تسجيل</button>
+        </div>
+    </form>
+</div>

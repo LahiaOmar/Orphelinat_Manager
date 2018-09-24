@@ -1,0 +1,74 @@
+    <div id="panel">
+    <div class="title">
+        <h1>قائمة المنتوجات</h1>
+    </div>
+    <div class="selectYear">
+        <div class="selectViv">
+            <form action="/docx" method="post" class="formSend">
+                <input type="hidden" name="mod" value="product" class="text">
+                <select name="type" id="select">
+                    <%for(var i =0; i < types.length; i++){%>
+                    <option <% if(types[i]==selected){ %>
+                            selected
+                            <%}%>
+                    >
+                        <%= types[i] %></option>
+                    <% } %>
+                </select>
+                <select name="genre" id="select">
+                    <option <% if (selectedGenre === "تبرعات") { %>
+                            selected
+                            <%}%>
+                    >
+                        تبرعات</option>
+                    <option <% if (selectedGenre === "مشتريات") { %>
+                            selected
+                            <%}%>
+                    >
+                        مشتريات</option>
+                </select>
+                <button type="submit" id="search" class="search" >بحث</button>
+                <input type="submit" class="print" value="" >
+            </form>
+        </div>
+    </div>
+
+    <% if(found != false) {%>
+    <div class="table1">
+        <table>
+            <thead>
+            <tr>
+            <tr>
+                <th>الكمية</th>
+                <th>وحدة</th>
+                <th>نوع المنتج</th>
+                <th>الاسم</th>
+            </tr>
+            </tr>
+            </thead>
+            <tbody>
+            <%for(var i = 0; i<result.length; i++) { %>
+            <tr>
+
+                <td ><%= result[i]. quantity%></td>
+                <td ><%= result[i]. unit%></td>
+                <td ><%= result[i]. type1%></td>
+                <td ><%= result[i]. name%></td>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+
+    </div>
+
+    <% } else { %>
+    <div class="error">
+        <img src="/images/database.png" alt="">
+        <div class="msgError">
+            <p>لايوجد بيانات بهاته الاختيارات </p>
+        </div>
+    </div>
+    <% } %>
+
+</div>
+

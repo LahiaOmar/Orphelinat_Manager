@@ -1,0 +1,42 @@
+<div id="panel">
+    <div class="title">
+        <h1>تغيير المداخيل</h1>
+    </div>
+    <form >
+        <input type="hidden" name="mod" value="income" class="text">
+        <input type="hidden" name="id" value="<%= data[0].id %>" class="text">
+        <div class="form_element">
+            <div class="input"><input type="text" name="source" class="text"value="<%= data[0].source %>" ></div>
+            <div class="label"><label for="">مصدر المداخيل</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="accountantCode" class="text"value="<%= data[0].accountantCode %>"  ></div>
+            <div class="label"><label for="">الرمز المحاسبي</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="documentNumber" class="text"value="<%= data[0].documentNumber %>" ></div>
+            <div class="label"><label for="">رقم وثيقة التحويل</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="date" name="transferDate" class="date"value="<%= data[0].transferDate.toISOString().slice(0, 10) %>" ></div>
+            <div class="label"><label for="">تاريخ التحويل</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="value"class="text"value="<%= data[0].value %>" ></div>
+            <div class="label"><label for="">مبلغ التحويل بالدرهم</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="note" class="text"value="<%= data[0].note %>"></div>
+            <div class="label"><label for="">ملاحظات</label></div>
+        </div>
+
+        <div class="form_element">
+            
+            <div class="input"><input type="date" name="day" class="date" value="<%= data[0].day.toISOString().slice(0, 10)%>" > </div> <div class="label"><label for="">يوم</label></div>
+        </div>
+        <div class="submitLoding">
+            <img class="loding" src="../images/reload.png" alt="">
+            <button type="submit" id="edit" class="submit">تغيير</button>
+        </div>
+    </form>
+</div>

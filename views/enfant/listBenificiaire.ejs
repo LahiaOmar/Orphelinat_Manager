@@ -1,0 +1,83 @@
+<div id="panel">
+    <div class="title">
+        <h1>قائمة المستفيدين</h1>
+    </div>
+    <div class="selectYear">
+        <form action="/docx" method="post" class="formSend">
+            <input type="hidden" name="mod" value="benificiaire" class="text" >
+            <input type="hidden" name="fich" value="enfant" class="text" >
+            <input type="submit" class="print" value="">
+        </form>
+    </div>
+    <div id="table1">
+        <table>
+            <thead>
+            <tr>
+                <th class="hiden">operation</th>
+                <th>ملاحظة</th>
+                <th>الوضعية الاجتماعية</th>
+                <th>المهنة</th>
+                <th>الهاتف</th>
+                <th>مكان الإقامة</th>
+                <th>رقم ب.ت.و</th>
+                <th>اسم الولي</th>
+                <th>الحالة الصحية</th>
+                <th>تاريخ المغادرة</th>
+                <th>رقم التسجيل</th>
+                <th>تاريخ الالتحاق بالمؤسسة</th>
+                <th>الوضعية العائلية</th>
+                <th>رقم ب.ت.و</th>
+                <th>مكان الازدياد</th>
+                <th>تاريخ الازدياد</th>
+                <th>الاسم الكامل</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for(var i = 0; i < lists.length; i++) { %>
+            <tr>
+                <td style="display: none"><%= lists[i]. _id %></td>
+                <td class="hiden">
+                    <div class="line">
+                        <input type="button" class="supp" value="حدف" onclick="sup(this)">
+                        <input type="button" class="change" value="تغيير" onclick="edit(this)">
+                    </div>
+
+                </td>
+                <td><%= lists[i].note %></td>
+                <td><%= lists[i].socialState %></td>
+                <td><%= lists[i].job %></td>
+                <td><%= lists[i].phoneNumber %></td>
+                <td><%= lists[i].address %></td>
+                <td><%= lists[i].familyCIN %></td>
+                <td><%= lists[i].familyName %></td>
+                <td><%= lists[i].healthState %> </td>
+                <td>
+                    <% if(lists[i].leavingDay !== null){%>
+                        <%= lists[i].leavingDay.toISOString().slice(0, 10) %>
+                    <%}else{%>
+                    <%}%>
+                </td>
+                <td><%= lists[i].serialNumber %> </td>
+                <td>
+                    <% if(lists[i].dateOfRegistration !== null){%>
+                        <%= lists[i].dateOfRegistration.toISOString().slice(0, 10)%>
+                    <%}else{%>
+                    <%}%>
+                </td>
+                <td><%= lists[i].familyState %> </td>
+                <td><%= lists[i].CIN %> </td>
+                <td><%= lists[i].birthPlace %> </td>
+                <td>
+                    <% if(lists[i].birthDay !== null){%>
+                    <%= lists[i].birthDay.toISOString().slice(0, 10) %>
+                    <%}else{%>
+                    <%}%>
+                </td>
+                <td> <%= lists[i].kidName %> </td>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+
+</div>

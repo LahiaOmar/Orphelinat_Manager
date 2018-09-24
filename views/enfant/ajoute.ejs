@@ -1,0 +1,128 @@
+<div id="panel">
+    <div class="title">
+        <h1>الملف الشخصي الطفل</h1>
+    </div>
+    <form >
+        <input type="hidden" name="mod" value="kid" class="text">
+        <div class="form_element">
+            <div class="input"><input type="text" name="name" class="text" required oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">الاسم الشخصي والعائلي</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="date" name="birthday" class="date" ></div>
+            <div class="label"><label for="">تاريخ الازدياد</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" class="input" >
+                <select name="gender" class="text" required>
+                    <option>ذكر</option>
+                    <option>أنثى</option>
+                </select>
+            </div>
+            <div class="label"><label for=""> الجنس </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="socialState" class="text" required oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">الحالة الاجتماعية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="fatherName" class="text" required oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">سم الأب</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="motherName" class="text" required oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">اسم الأم</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="motherAdress" class="text" oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">عنوان الأم </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="tel" value="87 35 94 35 05" name="phoneNumber" id="" class="text" required oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">الهاتف</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="date" name="dateOfRegistration" class="date" id="" required oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">تاريخ الالتحاق بالمؤسسة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="cause" class="text" required oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">سبب الالتحاق بالمؤسسة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="date" name="leavingDate" class="date" id=""  oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">تاريخ المغادرة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="date" name="deathDate" class="date" id="" oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">تاريخ الوفاة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="previousAssociation" class="text" required oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">المؤسسة السابقة </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="hostingDays" class="text" id="" required oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">مدة الإقامة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="RegistrationNumber" class="text" required oninvalid="msgSubmit(this)"></div>
+            <div class="label"> <label for="">رقم التسجيل</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="birthPlace" class="text" required oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">مكان الازدياد</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="healthState" class="text" required oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">الحالة الصحية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="recordNumber" class="text" required oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">رقم المحضر </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="date" name="recordDate" class="text"  oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">تاريخ المحضر </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="recordSource" class="text"  oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">مصدر المحضر </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="abandonPlace" class="text"  oninvalid="msgSubmit(this)"></div>
+            <div class="label"><label for="">مكان التخلي </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="fatherCIN" class="text" ></div>
+            <div class="label"><label for="">رقم ب.ت.و للأب</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="motherCIN" class="text"></div>
+            <div class="label"><label for="">رقم ب.ت.و للأم</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input">
+                <select name="nbRoom"  class="text" required>
+                    <% for(var i = 0; i < salles.length; i++) { %>
+                    <option><%= salles[i]%></option>
+                    <% } %>
+                </select>
+            </div>
+
+            <div class="label"><label for="">رقم الغرفة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="nbBed" class="text" required></div>
+            <div class="label"><label for="">رقم المرقد</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="Supervisor" class="text" required></div>
+            <div class="label"><label for="">المشرفة التربوية</label></div>
+        </div>
+        <div class="submitLoding">
+            <img class="loding" src="../images/reload.png" alt="">
+            <button type="submit" id="submit"class="submit">تسجيل</button>
+        </div>
+    </form>
+</div>

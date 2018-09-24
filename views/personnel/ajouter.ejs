@@ -1,0 +1,47 @@
+<div id="panel">
+    <div class="title">
+        <h1>سجل المستخدمون</h1>
+    </div>
+    <form   id="formulaire">
+        <input type="hidden" name="mod" value="employee" class="text" >
+        <div class="form_element">
+            <div class="input" ><input type="text" name="firstName" class="text" required oninvalid="msgSubmit(this)" pattern=".{2,}" > </div> <div class="label"><label for="">الاسم العائلي</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" name="lastName" class="text" required oninvalid="msgSubmit(this)" pattern=".{2,}"> </div> <div class="label"><label for="">الاسم الشخصي</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="date" name="birthDay" class="date" required oninvalid="msgSubmit(this)" >  </div> <div class="label"><label for="">تاريخ الازدياد</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" name="birthPlace" class="text" required oninvalid="msgSubmit(this)" pattern=".{2,}"> </div> <div class="label"><label for="">مكان الازدياد</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" name="CIN" class="text" required oninvalid="msgSubmit(this)" pattern=".{6,}"> </div> <div class="label"><label for="">رقم البطاقة الوطنية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" name="CNSS" class="text" required oninvalid="msgSubmit(this)" pattern=".{6,}"> </div> <div class="label"><label for="">رقم التسجيل في ص.و.ض.ج</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="date" name="dateOfRegistration" class="date" required oninvalid="msgSubmit(this)" > </div> <div class="label"><label for=""> تاريخ التسجيل </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" name="phoneNumber" class="text" required oninvalid="msgSubmit(this)" pattern="[0-9].{9,}" > </div> <div class="label"><label for="">رقم الهاتف</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" name="address" class="text" required oninvalid="msgSubmit(this)" pattern=".{2,}"> </div> <div class="label"><label for="">العنوان</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" name="role" class="text" required oninvalid="msgSubmit(this)" pattern=".{2,}"> </div> <div class="label"><label for="">المهمة داخل المركز</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input" ><input type="text" name="academicDegree" class="text" required oninvalid="msgSubmit(this)" pattern=".{2,}"> </div> <div class="label"><label for="">المستوى الدراسي</label></div>
+        </div>
+        <div class="submitLoding">
+            <img class="loding" src="../images/reload.png" alt="">
+            <button type="submit" id="submit"class="submit">تسجيل</button>
+        </div>
+    </form>
+</div>
+
+<script src="../stylesheets/forms.js"></script>

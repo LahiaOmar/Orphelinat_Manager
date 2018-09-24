@@ -1,0 +1,38 @@
+<div id="panel">
+    <div class="title">
+        <h1>vaccination</h1>
+    </div>
+
+    <form>
+        <div class="vacinatition">
+            <input type="hidden"  name= "id" id="id" value = "<%= kid[0]._id %>" >
+            <% for(var i=0; i< kid[0].vaccination.length; i++){%>
+
+            <div class="form_element">
+
+                <input type="hidden" value="<%= i%>">
+                <input type="date" class="text"
+                        <% if(kid[0].vaccination[i].value !== null){%>
+                       value="<%= kid[0].vaccination[i].value.toISOString().slice(0,10)%>"
+                        <%}%>
+
+                >
+                <div class="vacName">
+                    <input type="checkbox"
+                            <% if(kid[0].vaccination[i].value !== null){%>
+                            <%= "checked " %>
+                            <%}%>
+                    > <label for="" class="label"><%= kid[0].vaccination[i].name %></label>
+
+                </div>
+
+
+            </div>
+            <%}%>
+            <div class="submitLoding">
+                <img class="loding" src="../images/reload.png" alt="">
+                <button type="submit" id="submitVaccination"class="submit">تسجيل</button>
+            </div>
+        </div>
+    </form>
+</div>

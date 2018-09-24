@@ -1,0 +1,88 @@
+<div id="panel">
+    <div class="title">
+        <h1>تسجيل الأجور </h1>
+    </div>
+    <form>
+        <input type="hidden" name="mod" value="salary" class="text">
+        <div class="form_element">
+            <div class="input">
+                <select name="employee" id="employeeList" class="text" required>
+                    <%if(employees.length !== 0){%>
+                    <% for(var i = 0; i < employees.length; i++) { %>
+                    <option
+                            <% if(i=== selected){ %>
+                            selected
+                            <% } %>
+                    ><%= employees[i].firstName+" "+ employees[i].lastName %></option>
+                    <% } %>
+                    <%}%>
+                </select>
+            </div>
+
+            <div class="label"><label for="">الاسم الشخصي والعائلي</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="employeeRole" class="text" required value="<%if(selected !== -1){%><%= employees[selected].role %><%}%>"></div>
+            <div class="label"><label for="">المهمة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="CIN" class="text" required value="<%if(selected !== -1){%><%= employees[selected].CIN %><%}%>"></div>
+            <div class="label"><label for="">ب.ت.و </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="basicSalary" class="text" required ></div>
+            <div class="label"><label for="">الأجرة الأساسية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="increaseInSalary" class="text" required ></div>
+            <div class="label"><label for="">زيادة في الأجرة</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="totalSalary" class="text" required ></div>
+            <div class="label"><label for="">الأجرة الإجمالية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="familyCompensation" class="text" required ></div>
+            <div class="label"><label for="">تعويضات عائلية </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="absence" class="text" required ></div>
+            <div class="label"><label for="">غيابات</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="advance" class="text" required ></div>
+            <div class="label"><label for="">تسبيق</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="IGR" class="text" required ></div>
+            <div class="label"><label for="">IGR</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="CNSS" class="text" required value="<%if(selected !== -1){%><%= employees[selected].CNSS %><%}%>" ></div>
+            <div class="label"><label for="">CNSS</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="cnssNumber" class="text" required value="" ></div>
+            <div class="label"><label for="">CNSS رقم تسجيل</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="medicalInsurance" class="text" required ></div>
+            <div class="label"><label for="">التغطية الصحية</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="paymentTotal" class="text" required ></div>
+            <div class="label"><label for="">المبلغ الصافي للأداء</label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="text" name="paymentMethod" class="text" required ></div>
+            <div class="label"><label for="">كيفية الأداء </label></div>
+        </div>
+        <div class="form_element">
+            <div class="input"><input type="date" name="day" class="date" required=""> </div> <div class="label"><label for="">يوم</label></div>
+        </div>
+        <div class="submitLoding">
+            <img class="loding" src="../images/reload.png" alt="">
+            <button type="submit" id="submit"class="submit">تسجيل</button>
+        </div>
+    </form>
+</div>  

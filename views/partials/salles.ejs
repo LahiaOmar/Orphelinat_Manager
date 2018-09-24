@@ -1,0 +1,25 @@
+<div id=<%='section_'+(i+1)%> class="section" onclick="<%='clicker('+(i+1)+')'%>">
+    <img src="../images/houses.png" alt="home" class="logo">
+    <span>القاعات</span>
+    <img src="../images/arrow-point-to-right.png" alt="arrow" class="arrow">
+</div>
+<ul id=<%='element_'+(i+1)%> class="element">
+    <li onclick="synchronize('sales','equipements')">
+        <div class="barLine">
+            <img src="../images/fond-4.png">
+        </div>
+        <p class="contenu">التجهيزات</p>
+    </li>
+    <li onclick="synchronize('sales','list')">
+        <div class="barLine">
+            <img src="../images/fond-4.png">
+        </div>
+        <p class="contenu">قائمة القاعات</p>
+    </li>
+    <li onclick="synchronize('sales','addSalle')">
+        <div class="barLine">
+            <img src="../images/fond-4.png">
+        </div>
+        <p class="contenu"> إضافة قاعة / تجهيزات</p>
+    </li>
+</ul>
