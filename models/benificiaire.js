@@ -13,7 +13,7 @@ var beneficiarySchema  = mongoose.Schema({
         required: true
     },
     birthPlace: {
-        type: Date,
+        type: String,
         required: true
     },
     CIN: {

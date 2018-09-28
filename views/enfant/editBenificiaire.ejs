@@ -2,6 +2,9 @@
     <div class="title">
         <h1>سجل المستفيدين</h1>
     </div>
+    <div>
+        <input type="button" class="print" value="" onclick="printe('id')">
+    </div>
     <form >
         <input type="hidden" name="mod" value="benificiaire" class="text">
         <input type="hidden" name="id" value="<%= data[0].id %>" class="text">
@@ -90,6 +93,6 @@
             <img class="loding" src="../images/reload.png" alt="">
             <button type="submit" id="edit"class="submit">تسجيل</button>
         </div>
-        <input type="button" class="print" value="" onclick="printe('id')">
+        
     </form>
 </div>

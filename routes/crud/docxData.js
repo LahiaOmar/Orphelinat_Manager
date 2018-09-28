@@ -56,6 +56,9 @@ router.post('/', function (req, res) {
         if(req.body.type !== "NaN" ) obj = Object.assign({'type1' : req.body.type}, obj)
         if(req.body.genre !== "NaN") obj = Object.assign({'genre' : req.body.genre}, obj)
     }
+    else if(mod === 'equivalence'){
+        obj = Object.assign({'time.year' : req.body.year}, obj);
+    }
     console.log("obj = ", obj)
     model.find(obj).then(
        async (result)=>{
@@ -96,7 +99,7 @@ router.post('/', function (req, res) {
             .then(function (parsedBody) {
                 console.log("parser data : ",parsedBody); 
                 returndata = parsedBody;
-                red.exec('start "" "C:/Users/Lahia omar/Documents/stuff/asso amal/docx_server"' , (err, stdout, stderr)=>{
+                red.exec('start "" "C:/Users/Lahia omar/Documents/stuff/Orphelinat_Manager/docx_server"' , (err, stdout, stderr)=>{
                     if(err){
                         console.log("err ", err)
                     }else{

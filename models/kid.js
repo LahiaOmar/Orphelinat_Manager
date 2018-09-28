@@ -92,10 +92,7 @@ var kidSchema = mongoose.Schema({
         required: true
     },
     birthPlace: {
-        type: Date,
-        minLength: 1,
-        trim: true,
-        required: true
+        type: String,
     },
     healthState: {
         type: String,

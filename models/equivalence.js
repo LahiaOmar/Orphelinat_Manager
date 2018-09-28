@@ -102,6 +102,13 @@ equivalenceSchema.methods.getEquivalenceOfTheYear = (year)=>{
         }
     )
 }
+equivalenceSchema.statics.getFieldsArabic = ()=>{
+    const arabicFields = ["الموازنة بالدرهم", "مجموع النفقات بالدرهم", "مجموع المداخيل بالدرهم", "الشهور"]
+    return arabicFields
+}
+equivalenceSchema.statics.getTable = (data)=>{
+
+}
 var equivalence = mongoose.model('equivalence', equivalenceSchema)
 
 module.exports = equivalence;
